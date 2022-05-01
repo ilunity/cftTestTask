@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Таблица</title>
+		<link rel="stylesheet" href="css/style.css">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<div class="container">
+			<div class="table">
+				<div class="table__row">
+					<div class="table__cell table__title">Город</div>
+					<div class="table__cell table__title">Температура</div>
+					<div class="table__cell table__title">Ветер (м/c)</div>
+					<div class="table__cell table__title">Влажность</div>
+					<div class="table__cell table__title">Ощущается</div>
+				</div>
+				<div class="table__row">
+					<div class="table__cell table__item" data-label="Город"><p>Томск</p></div>
+					<div class="table__cell table__item" data-label="Температура"><p>16</p></div>
+					<div class="table__cell table__item" data-label="Ветер (м/с)"><p>4</p></div>
+					<div class="table__cell table__item" data-label="Влажность"><p>50%</p></div>
+					<div class="table__cell table__item" data-label="Ощущается"><p>14</p></div>
+				</div>
+				<div class="table__row">
+					<div class="table__cell table__item" data-label="Город"><p>Новосибирск</p></div>
+					<div class="table__cell table__item" data-label="Температура"><p>15</p></div>
+					<div class="table__cell table__item" data-label="Ветер (м/с)"><p>2</p></div>
+					<div class="table__cell table__item" data-label="Влажность"><p>40%</p></div>
+					<div class="table__cell table__item" data-label="Ощущается"><p>17</p></div>
+				</div>
+				<div class="table__row">
+					<div class="table__cell table__item" data-label="Город"><p>Кемерово</p></div>
+					<div class="table__cell table__item" data-label="Температура"><p>17</p></div>
+					<div class="table__cell table__item" data-label="Ветер (м/с)"><p>3</p></div>
+					<div class="table__cell table__item" data-label="Влажность"><p>47%</p></div>
+					<div class="table__cell table__item" data-label="Ощущается"><p>18</p></div>
+				</div>
+				<div class="table__row">
+					<div class="table__cell table__item" data-label="Город"><p>Омск</p></div>
+					<div class="table__cell table__item" data-label="Температура"><p>19</p></div>
+					<div class="table__cell table__item" data-label="Ветер (м/с)"><p>2.5</p></div>
+					<div class="table__cell table__item" data-label="Влажность"><p>73%</p></div>
+					<div class="table__cell table__item" data-label="Ощущается"><p>18</p></div>
+				</div>
+			</div>
+			<form class="search-form" onsubmit="return false">
+				<label class="search-form__input-label">
+					<div class="search-form__title">Поиск по первому столбцу</div>
+					<input class="search-form__input" type="text">
+				</label>
+				<button class="search-form__submit-btn" type="submit">Поиск</button>
+			</form>
+			<div class="found-count-frame"></div>
+		</div>
+		<script src="js/main.js" type="module"></script>
+	</body>
+</html>
