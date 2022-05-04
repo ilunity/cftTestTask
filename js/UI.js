@@ -11,11 +11,11 @@ function highlightHTML(html, pos, length) {
     return resultHtml;
 }
 
-const searchedColumn = new class {
-    itemElements = document.querySelectorAll('.table__item:first-child');
-    highlighted = [];
+class searchedColumn {
+    static itemElements = document.querySelectorAll('.table__item:first-child');
+    static highlighted = [];
 
-    highlightAndCount = (string) => {
+    static highlightAndCount = (string) => {
         string = string.toLowerCase();
 
         let foundCount = 0;
@@ -31,30 +31,30 @@ const searchedColumn = new class {
         return foundCount;
     };
 
-    resetHighlighted = () => {
+    static resetHighlighted = () => {
         this.highlighted.forEach((item) => {
             item.element.innerHTML = item.originalContent;
         });
         this.highlighted = [];
     };
-};
+}
 
-const searchForm = new class {
-    input = document.querySelector('.search-form__input');
-    btn = document.querySelector('.search-form__submit-btn');
-    foundCountFrame = document.querySelector('.found-count-frame');
+class searchForm {
+    static input = document.querySelector('.search-form__input');
+    static btn = document.querySelector('.search-form__submit-btn');
+    static foundCountFrame = document.querySelector('.found-count-frame');
 
-    getSearchingText = () => {
+    static getSearchingText = () => {
         const value = this.input.value;
         this.resetInput();
         return value;
     };
 
-    resetInput = () => {
+    static resetInput = () => {
         this.input.value = '';
     };
 
-    setCount = (count) => {
+    static setCount = (count) => {
         if (count !== 0) {
             this.foundCountFrame.textContent = `Количество совпадений: ${count}`;
             return;
@@ -62,6 +62,6 @@ const searchForm = new class {
 
         this.foundCountFrame.textContent = 'Ничего не найдено';
     };
-};
+}
 
 export {searchedColumn, searchForm};
